@@ -1,0 +1,18 @@
+# Required for NebulaPy core functionality
+matplotlib>=3.1  # For visualizations (accuracy/loss plots)
+pandas>=1.0     # For data handling and analysis
+
+# Required for machine learning frameworks
+tensorflow>=2.0  # For working with TensorFlow models
+torch>=1.0      # For working with PyTorch models
+scikit-learn>=0.24  # For Scikit-learn models and metrics
+
+# Required for JSON and SQLite storage
+sqlite3  # SQLite support (typically built-in with Python, but good to mention)
+
+# Development dependencies (optional, install with "dev" extra)
+pytest>=7.0    # For running tests
+flake8>=3.9    # For code linting
+
+# Other utilities that may be useful (you can include or remove depending on actual use)
+numpy>=1.18    # Often required for ML frameworks
