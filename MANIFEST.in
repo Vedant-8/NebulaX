@@ -1,0 +1,19 @@
+include README.md
+include LICENSE
+include requirements.txt
+
+# Include everything in the docs/ folder
+recursive-include docs *
+
+# Include everything in the examples/ folder
+recursive-include examples *
+
+# Include all test files
+recursive-include tests *
+
+# Include specific package data (if any)
+recursive-include nebulaPy *
+
+# Exclude any unwanted files (optional)
+exclude *.pyc
+exclude __pycache__/
