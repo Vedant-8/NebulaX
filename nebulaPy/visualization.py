@@ -187,3 +187,24 @@ def plot_experiment_timeline(events):
     fig = px.timeline(df, x_start="timestamp", x_end="timestamp", y="event", color="parameter")
     fig.update_layout(title="Experiment Timeline")
     fig.show()
+
+def visualize_experiment(exp, metrics_to_plot=None, limit_versions=10):
+    """
+    Visualize an experiment's metrics and timeline.
+    
+    Args:
+        exp (ExperimentTracker): The experiment to visualize.
+        metrics_to_plot (list): List of metrics to plot (optional).
+        limit_versions (int): Limit the number of versions to visualize.
+    """
+    # Limit versions
+    history = exp.history[-limit_versions:]
+    
+    # Filter metrics
+    metrics_to_plot = metrics_to_plot or exp.metrics.keys()
+    
+    # Generate visualization (simplified)
+    for metric in metrics_to_plot:
+        # Process and visualize data
+        data = exp.get_visualization_data([metric])
+        print(f"Visualizing {metric}: {data[metric]}")  # Replace with actual plotting code
