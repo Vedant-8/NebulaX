@@ -7,7 +7,10 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 class ExperimentTracker:
-    def __init__(self, name: str, description: str = "", timestamp: str = None, version: int = 1):
+    _experiment_cache = {}
+    _visualization_cache = {}
+
+    def __init__(self, name: str, description: str = "", timestamp: str = None, version: int = 1, max_history_length: int = 10):
         self.name = name
         self.description = description
         self.timestamp = timestamp or datetime.now().isoformat()
@@ -17,6 +20,7 @@ class ExperimentTracker:
         self.tags = []
         self.history = []
         self.notifications = []
+        self.max_history_length = max_history_length  # Limit the version history
 
     # Add the get_tags method
     def get_tags(self):
@@ -49,13 +53,18 @@ class ExperimentTracker:
     def _log_change(self, change_type: str, name: str, value=None):
         """Log changes made to experiment and update version."""
         self.version += 1
-        self.history.append({
+        change = {
             "version": self.version,
             "change_type": change_type,
             "name": name,
             "value": value,
             "timestamp": datetime.now().isoformat(),
-        })
+        }
+        self.history.append(change)
+        
+        # Trim history to only the most recent entries
+        if len(self.history) > self.max_history_length:
+            self.history = self.history[-self.max_history_length:]
 
     def save(self, filepath: str):
         """Save experiment data to a JSON file."""
@@ -74,14 +83,20 @@ class ExperimentTracker:
 
     @classmethod
     def load(cls, filepath: str):
-        """Load experiment data from a JSON file."""
+        """Load experiment data from a JSON file with caching."""
+        if filepath in cls._experiment_cache:
+            return cls._experiment_cache[filepath]
+        
         with open(filepath, "r") as f:
             data = json.load(f)
+        
         tracker = cls(data["name"], data["description"], data["timestamp"], data["version"])
         tracker.params = data["parameters"]
         tracker.metrics = data["metrics"]
         tracker.tags = data["tags"]
         tracker.history = data["history"]
+        
+        cls._experiment_cache[filepath] = tracker
         return tracker
 
     def get_version_history(self):
@@ -106,7 +121,7 @@ class ExperimentTracker:
                 self.version -= 1
             else:
                 break
-    
+
     def filter_experiments(experiments, **criteria):
         """
         Filter experiments based on provided criteria.
@@ -184,4 +199,27 @@ class ExperimentTracker:
         for notification in self.notifications:
             if notification["metric_name"] == metric_name and notification["condition"](value):
                 logging.info(f"Notification: {notification['message']}")
-    
+
+    def get_visualization_data(self, metrics_to_plot=None):
+        """
+        Retrieve preprocessed visualization data for the experiment.
+        
+        Args:
+            metrics_to_plot (list): List of metrics to plot (optional).
+        
+        Returns:
+            dict: Processed visualization data.
+        """
+        cache_key = tuple(metrics_to_plot or self.metrics.keys())
+        
+        if cache_key in self._visualization_cache:
+            return self._visualization_cache[cache_key]
+        
+        # Process metrics for visualization (simplified example)
+        visualization_data = {}
+        for metric in metrics_to_plot or self.metrics.keys():
+            # Prepare visualization data (e.g., trends over time)
+            visualization_data[metric] = [entry["value"] for entry in self.history if entry["change_type"] == "Metric change" and entry["name"] == metric]
+        
+        self._visualization_cache[cache_key] = visualization_data
+        return visualization_data
