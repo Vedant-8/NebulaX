@@ -1,37 +1,22 @@
 # NebulaPy Documentation
 
-NebulaPy is an open-source Python library designed for tracking, managing, and comparing machine learning experiments. It helps log hyperparameters, metrics, and experiment results, with built-in support for saving and visualizing data.
+## Overview
 
-## Features
+NebulaPy is a cutting-edge Python library designed to track, organize, and compare AI experiments seamlessly. With support for popular machine learning frameworks like TensorFlow, PyTorch, and Scikit-learn, NebulaPy empowers developers to monitor progress, visualize results, and optimize experiments efficiently.
 
-- **Track experiments**: Log hyperparameters, metrics, and timestamps.
-- **Save and load experiments**: Support for saving to JSON and SQLite databases.
-- **Visualize results**: Compare metrics (like accuracy and loss) across experiments.
+### Features
 
-## Installation
+- **Enhanced Experiment Tracking**: Log detailed parameters, metrics, and version changes for every experiment.
+- **Framework Integration**: Built-in support for TensorFlow, PyTorch, and Scikit-learn.
+- **Advanced Visualizations**: Generate plots for accuracy, loss, and other metrics over time.
+- **Version Control**: Track and roll back changes to experiments.
+- **Custom Notifications**: Get alerted when key metrics reach desired thresholds.
+- **Multi-format Storage**: Save experiments in JSON and SQLite formats.
 
-Follow the steps below to set up **NebulaPy** on your local machine.
+### Why Use NebulaPy?
 
-### Requirements
+NebulaPy streamlines AI experiment management, providing:
 
-- Python 3.6+
-- Dependencies: Listed in `requirements.txt`
-
----
-
-### **2. `installation.md` (Setup Instructions)**
-
-````markdown
-# Installation Guide for NebulaPy
-
-Follow these steps to install **NebulaPy**:
-
-## Step 1: Clone the Repository
-
-Clone the repository to your local machine using Git:
-
-```bash
-git clone https://github.com/Vedant-8/NebulaPy.git
-cd NebulaPy
-```
-````
+- Reproducibility: Ensures every experiment can be easily replicated.
+- Scalability: Handles complex workflows involving multiple frameworks.
+- Insights: Offers granular metrics and visualizations to guide optimization.
