@@ -1,26 +1,21 @@
 from setuptools import setup, find_packages
-import os
 
-# Read the README file for the long description
-readme_path = "README.md"
-long_description = ""
-if os.path.exists(readme_path):
-    with open(readme_path, "r", encoding="utf-8") as fh:
-        long_description = fh.read()
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 setup(
-    name="NebulaPy",  # Name of the package
-    version="0.1.0",  # Initial version
-    author="Vedant Kulkarni",  # Replace with your name
-    author_email="vedantkulkarni208@gmail.com",  # Replace with your email
+    name="NebulaPy",
+    version="0.1.0",
+    author="Vedant Kulkarni",
+    author_email="vedantkulkarni208@gmail.com",
     description="A lightweight library to track and organize AI experiments",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Vedant-8/NebulaPy",  # Replace with the actual URL of your repository
+    url="https://github.com/Vedant-8/NebulaPy",
     project_urls={
-        "Documentation": "https://github.com/Vedant-8/NebulaPy/tree/main/docs",  # Update as needed
-        "Source": "https://github.com/Vedant-8/NebulaPy",  # Repository link
-        "Tracker": "https://github.com/Vedant-8/NebulaPy/issues",  # Issues page link
+        "Documentation": "https://github.com/Vedant-8/NebulaPy/tree/main/docs",
+        "Source": "https://github.com/Vedant-8/NebulaPy",
+        "Tracker": "https://github.com/Vedant-8/NebulaPy/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -29,23 +24,23 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
-    package_dir={"": "nebulaPy"},  # Points to the package directory
-    packages=find_packages(where="nebulaPy"),  # Automatically find sub-packages
+    package_dir={"": "nebulaPy"},
+    packages=find_packages(where="nebulaPy"),
     python_requires=">=3.7",
     install_requires=[
-        "matplotlib>=3.1",  # For visualization.py
-        "pandas>=1.0",  # For data handling
-        "tensorflow>=2.5",  # TensorFlow integration
-        "torch>=1.9",  # PyTorch integration
-        "scikit-learn>=0.24",  # Scikit-learn integration
+        "matplotlib>=3.1",
+        "pandas>=1.0",
+        "tensorflow>=2.5",
+        "torch>=1.9",
+        "scikit-learn>=0.24",
     ],
     extras_require={
-        "dev": ["pytest>=7.0", "flake8"],  # Development dependencies
+        "dev": ["pytest>=7.0", "flake8"],
     },
-    include_package_data=True,  # Include non-code files specified in MANIFEST.in
+    include_package_data=True,
     entry_points={
         "console_scripts": [
-            "nebulapy=nebulaPy.__main__:main",  # Example CLI entry point (optional)
+            "nebulapy=nebulaPy.__main__:main",
         ]
     },
 )
