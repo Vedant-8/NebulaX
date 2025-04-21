@@ -3,8 +3,8 @@ import tensorflow as tf
 import torch
 from sklearn.datasets import make_classification
 from sklearn.model_selection import train_test_split
-from nebulaPy.experiment import ExperimentTracker
-from nebulaPy.experiment_integrations import TensorFlowTracker, PyTorchTracker, SklearnTracker
+from nebulaX.experiment import ExperimentTracker
+from nebulaX.experiment_integrations import TensorFlowTracker, PyTorchTracker, SklearnTracker
 from torch import nn, optim
 from torch.utils.data import DataLoader, TensorDataset
 

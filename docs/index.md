@@ -1,8 +1,8 @@
-# NebulaPy Documentation
+# NebulaX Documentation
 
 ## Overview
 
-NebulaPy is a cutting-edge Python library designed to track, organize, and compare AI experiments seamlessly. With support for popular machine learning frameworks like TensorFlow, PyTorch, and Scikit-learn, NebulaPy empowers developers to monitor progress, visualize results, and optimize experiments efficiently.
+NebulaX is a cutting-edge Python library designed to track, organize, and compare AI experiments seamlessly. With support for popular machine learning frameworks like TensorFlow, PyTorch, and Scikit-learn, NebulaPy empowers developers to monitor progress, visualize results, and optimize experiments efficiently.
 
 ### Features
 
@@ -13,7 +13,7 @@ NebulaPy is a cutting-edge Python library designed to track, organize, and compa
 - **Custom Notifications**: Get alerted when key metrics reach desired thresholds.
 - **Multi-format Storage**: Save experiments in JSON and SQLite formats.
 
-### Why Use NebulaPy?
+### Why Use NebulaX?
 
 NebulaPy streamlines AI experiment management, providing:
 

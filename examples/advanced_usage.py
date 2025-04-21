@@ -37,10 +37,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 # Import nebulaPy modules
-from nebulaPy.experiment import ExperimentTracker
-from nebulaPy.experiment_integrations import TensorFlowTracker, PyTorchTracker, SklearnTracker
-from nebulaPy.storage import save_to_json, load_from_json, save_to_sqlite, load_from_sqlite
-from nebulaPy.visualization import (
+from nebulaX.experiment import ExperimentTracker
+from nebulaX.experiment_integrations import TensorFlowTracker, PyTorchTracker, SklearnTracker
+from nebulaX.storage import save_to_json, load_from_json, save_to_sqlite, load_from_sqlite
+from nebulaX.visualization import (
     plot_metric_trends, 
     compare_metrics, 
     compare_experiments,

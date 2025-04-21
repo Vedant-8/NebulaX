@@ -5,10 +5,10 @@
 ### 1. Setting Up an Experiment
 
 ```python
-from nebulapy.experiment import ExperimentTracker
+from nebulaX.experiment import ExperimentTracker
 
 # Initialize tracker
-tracker = ExperimentTracker(name="My Experiment", description="Testing NebulaPy features")
+tracker = ExperimentTracker(name="My Experiment", description="Testing NebulaX features")
 
 # Log parameters
 tracker.log_params({
@@ -24,7 +24,7 @@ tracker.log_metrics({"accuracy": 0.85, "loss": 0.5})
 ### 2. Visualizing Metrics
 
 ```python
-from nebulapy.visualization import plot_metrics
+from nebulaX.visualization import plot_metrics
 
 # Generate a sample plot
 plot_metrics(tracker, metric="accuracy")
@@ -33,7 +33,7 @@ plot_metrics(tracker, metric="accuracy")
 ### 3. Saving and Loading Experiments
 
 ```python
-from nebulapy.storage import save_to_json, load_from_json
+from nebulaX.storage import save_to_json, load_from_json
 
 # Save experiment to JSON
 save_to_json(tracker, "experiment.json")
@@ -49,7 +49,7 @@ loaded_tracker = load_from_json("experiment.json")
 #### TensorFlow Integration
 
 ```python
-from nebulapy.integrations.tensorflow import track_tf_experiment
+from nebulaX.integrations.tensorflow import track_tf_experiment
 
 # Assuming `model` is a TensorFlow model
 track_tf_experiment(tracker, model, train_data, val_data, epochs=10)
@@ -58,7 +58,7 @@ track_tf_experiment(tracker, model, train_data, val_data, epochs=10)
 #### PyTorch Integration
 
 ```python
-from nebulapy.integrations.pytorch import track_torch_experiment
+from nebulaX.integrations.pytorch import track_torch_experiment
 
 # Assuming `model` and `optimizer` are PyTorch objects
 track_torch_experiment(tracker, model, optimizer, train_loader, val_loader, epochs=10)
@@ -67,7 +67,7 @@ track_torch_experiment(tracker, model, optimizer, train_loader, val_loader, epoc
 #### Scikit-learn Integration
 
 ```python
-from nebulapy.integrations.sklearn import track_sklearn_experiment
+from nebulaX.integrations.sklearn import track_sklearn_experiment
 
 # Assuming `model` is a Scikit-learn model
 track_sklearn_experiment(tracker, model, X_train, y_train, X_test, y_test)

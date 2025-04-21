@@ -1,6 +1,6 @@
 import os
 import unittest
-from nebulaPy.experiment import ExperimentTracker
+from nebulaX.experiment import ExperimentTracker
 
 class TestExperimentTracker(unittest.TestCase):
     def setUp(self):

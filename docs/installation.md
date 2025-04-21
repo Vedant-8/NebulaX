@@ -12,10 +12,10 @@
 
 ### Using pip
 
-Install NebulaPy from PyPI:
+Install NebulaX from PyPI:
 
 ```bash
-pip install nebulapy
+pip install nebulaX
 ```
 
 ### Installing from Source
@@ -23,7 +23,7 @@ pip install nebulapy
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/Vedant-8/NebulaPy.git
-cd NebulaPy
+git clone https://github.com/Vedant-8/NebulaX.git
+cd NebulaX
 pip install -r requirements.txt
 ```

@@ -1,6 +1,6 @@
 import os
 import unittest
-from nebulaPy.storage import save_to_json, load_from_json, save_to_sqlite, load_from_sqlite
+from nebulaX.storage import save_to_json, load_from_json, save_to_sqlite, load_from_sqlite
 
 class TestStorage(unittest.TestCase):
     def setUp(self):

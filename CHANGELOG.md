@@ -36,4 +36,4 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!  
-Feel free to check the [GitHub Issues](https://github.com/Vedant-8/NebulaPy/issues) page for ongoing discussions.
+Feel free to check the [GitHub Issues](https://github.com/Vedant-8/NebulaX/issues) page for ongoing discussions.

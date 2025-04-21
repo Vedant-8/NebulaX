@@ -1,6 +1,6 @@
-from nebulaPy.experiment import ExperimentTracker
-from nebulaPy.storage import save_to_json
-from nebulaPy.visualization import plot_metric_trends
+from nebulaX.experiment import ExperimentTracker
+from nebulaX.storage import save_to_json
+from nebulaX.visualization import plot_metric_trends
 
 # Initialize an experiment tracker
 experiment = ExperimentTracker(name="Model_1", description="First Experiment")

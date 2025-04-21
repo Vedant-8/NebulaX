@@ -1,6 +1,6 @@
 import unittest
 import matplotlib.pyplot as plt
-from nebulaPy.visualization import plot_metric_trends, compare_metrics, interactive_plot_metric_trends, plot_confusion_matrix, plot_roc_curve, plot_residuals, plot_experiment_timeline
+from nebulaX.visualization import plot_metric_trends, compare_metrics, interactive_plot_metric_trends, plot_confusion_matrix, plot_roc_curve, plot_residuals, plot_experiment_timeline
 from sklearn.metrics import confusion_matrix, roc_curve
 import numpy as np
 
