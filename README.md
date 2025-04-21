@@ -15,7 +15,7 @@
 ### 📂 Storage Options
 - Save and load experiment data in JSON or SQLite format for easy sharing and reproducibility.
 
-### 🔌 Framework Integrations
+### ⚙️ Framework Integrations
 - Track experiments from TensorFlow, PyTorch, and Scikit-learn models seamlessly with built-in integrations.
 
 ### 🔔 Notifications and Alerts
@@ -109,6 +109,16 @@ experiment.set_notification("accuracy", lambda value: value > 0.9, "Accuracy exc
 ```python
 experiment.rollback(version=1)
 ```
+
+---
+
+## Documentation
+
+For detailed guides and examples, refer to the [Documentation](https://github.com/Vedant-8/NebulaPy/tree/main/docs) folder, which includes:
+
+- [Index](docs/index.md)
+- [Installation Guide](docs/installation.md)
+- [Usage Guide](docs/usage.md)
 
 ---
 
